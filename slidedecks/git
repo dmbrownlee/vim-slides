@@ -1,0 +1,335 @@
+# vim: filetype=slide
+
+
+
+
+
+
+
+
+
+                         ♆ Intro to git and GitHub
+
+                             ♆ D. M. Brownlee
+# vim: filetype=slide
+
+
+
+
+  ♆ Software Configuration Managment (SCM)
+
+      In software engineering, software configuration management
+      (SCM or S/W CM) is the task of tracking and controlling changes
+      in the software, part of the larger cross-disciplinary field of
+      configuration management. SCM practices include revision control
+      and the establishment of baselines. If something goes wrong, SCM
+      can determine what was changed and who changed it.
+
+                                                             - Wikipedia
+# vim: filetype=slide
+
+
+
+
+  ♆ example without VCS: workflow
+
+      • setup is just creating a directory for your project and backups
+
+        $ mkdir ~/project1 ~/backups
+
+      • do work in your work directory
+
+        $ vim ~/project1/...
+
+      • make a backup when you finish working on a task
+
+        $ tar zcpvC ~ \
+        > -f ~/backups/project1-$(date '+%Y%m%d-%H%M').tgz ./project1
+# vim: filetype=slide
+
+
+
+
+  ♆ example without VCS: problems (not all of them)
+
+      • inefficient storage
+
+      • difficult to ...
+
+        ... see changes that haven't been backed up
+        ... see differences
+        ... rollback
+        ... understand why you changed something
+        ... work multiple issues
+
+      • no collaboration
+# vim: filetype=slide
+
+
+
+
+  ♆ VCS definitions
+
+      • software configuration
+
+        all the files of a project at a given point in time
+
+      • revision
+
+        a number or label assigned to the software configuration
+
+      • Version Control System (VCS)
+
+        a class of systems responsible for managing changes to computer programs, documents, large web sites, or other collections of information
+# vim: filetype=slide
+
+             |  |
+             |  *  8: merge new API into main line
+             |  |\
+             |  | \
+             |  |  *  7: merge bug fix into new API
+             |  | /|
+             |  |/ |
+             |  *  |  6: merge fix to main line
+             | /|  |
+             |/ |  |
+             *  |  |  5: bug fix on release branch
+              \ |  |
+               \|  *  4: unit tests for new API commited
+                | /
+                |/
+                *  3: initial implementation of Foo
+                |
+                *  2: unit tests commited
+                |
+                *  1: initial commit
+# vim: filetype=slide
+
+
+
+
+  ♆ local repo: components
+
+      • workspace
+
+        the project directory where you do your work
+
+      • staging area (cache)
+
+        a list of files you want to add to the next commit
+
+      • repository
+
+        the storage space for your prior commits
+# vim: filetype=slide
+
+
+
+
+  ♆ local repo: initial setup
+
+      • change a directory into a local repository
+
+        $ mkdir ~/project2 && cd ~/project2 && git init
+
+      • optionally configure git for the way your work
+
+        $ git config -l --global
+        $ git config --global user.name "Your name here"
+        $ git config --global user.email ghusername@users.noreply.github.com
+# vim: filetype=slide
+
+
+
+
+  ♆ local repo: workflow
+
+      • Check the current status of the files in the repo
+
+        $ git status
+
+      • View the history of project commits
+
+        $ git log
+        $ git log --oneline --since "$(date -v-7d)"
+        $ git log --oneline --decorate --graph
+        $ git log --oneline --stat
+# vim: filetype=slide
+
+
+
+
+  ♆ local repo: workflow (continued)
+
+      • Add a file and view its untracked status
+        $ vim myfile.txt
+        $ git status
+
+      • Add the file to the staging list for the next commit
+
+        $ git add myfile.txt
+        $ git status
+
+      • Commit your changes with a message explaining the reason
+
+        $ git commit -m "Initial commit of myfile.txt"
+        $ git status
+# vim: filetype=slide
+
+
+
+
+  ♆ local repo: workflow (continued)
+
+      • Edit the same file and view its modified status
+        $ vim myfile.txt
+        $ git status
+
+      • View the changes in the file
+
+        $ git diff myfile.txt
+
+      • Commit the additional changes with a message explaining the reason
+
+        $ git add myfile.txt
+        $ git commit -m "Fixed foo which was causing problems with bar"
+        $ git status
+# vim: filetype=slide
+
+
+
+
+  ♆ local repo: problems
+
+     • work is not safe from deletion or disk failure
+
+       $ ls -a
+
+     • removing your workspace also removed the repo
+# vim: filetype=slide
+
+
+
+
+  ♆ remote repo: components
+
+      • remote
+
+        $ git remote -v
+# vim: filetype=slide
+
+
+
+
+  ♆ remote repo: initial setup
+
+      • setup repo on local disk
+
+        $ mkdir ~/repo3 && cd ~/repo3
+        $ git init --bare
+        $ cd ~ && git clone file://$HOME/repo3 project3
+
+      • setup new repository on GitHub
+        $ # create a repository on GitHub using web UI
+        $ git clone https://github.com/githubname/project3.git
+        $ git config --global user.name "Your Display Name"
+        $ git config --global user.email githubname@users.noreply.github.com
+# vim: filetype=slide
+
+
+
+
+  ♆ remote repo: workflow
+
+      • get current and start a new branch for your work
+
+        $ git checkout master
+        $ git pull
+        $ git checkout -b issue1234
+
+      • do your work on a different branch
+        $ vim ...
+        $ git add .
+        $ git commit -m "Why you made this change."
+# vim: filetype=slide
+
+
+
+
+  ♆ remote repo: workflow (continued)
+
+      • make sure you're still current and merge your changes
+
+        $ git checkout master
+        $ git pull
+        $ git merge issue1234
+        $ # resolve conflicts, git add, git commit if needed
+        $ git push
+        $ git branch -d issue1234
+# vim: filetype=slide
+
+
+
+
+  ♆ multiple remote repos: components
+
+      • forks of other remote repositories
+# vim: filetype=slide
+
+
+
+
+  ♆ multiple remote repos: initial setup
+
+      • fork an existing repository on GitHub
+        $ # fork an existing repository on GitHub using web UI
+        $ git clone https://github.com/githubname/cheatsheets.git
+        $ git config --global user.name "Your Display Name"
+        $ git config --global user.email githubname@users.noreply.github.com
+
+      • work with your fork as if you had created it yourself
+
+      • use the GitHub UI to send a pull request to the origninal owner
+# vim: filetype=slide
+
+
+
+
+  ♆ multiple remote repos: problems
+
+      • still need to coordinate who is acting as authoritative repository
+# vim: filetype=slide
+
+
+
+
+
+
+
+
+
+
+                               ♆ Questions?
+# vim: filetype=slide
+
+
+
+
+
+
+
+
+
+
+                               ♆ Thank you!
+
+
+
+
+
+
+
+
+
+
+                                                                           :qa

@@ -1,0 +1,56 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+set modeline
+set nocompatible
+set mouse=a
+
+" UI tweaks "
+set nonumber
+set norelativenumber
+set noshowcmd
+syntax on
+set hlsearch
+set incsearch
+set colorcolumn=81
+set laststatus=0
+set noshowmode
+set title
+set foldcolumn=0
+
+" Visual line wrapping (not adding LF to text in buffer) "
+set wrap
+set linebreak
+let &showbreak = '        '
+
+" Disable arrow keys (hardcore) "
+map  <up>    <nop>
+imap <up>    <nop>
+map  <down>  <nop>
+imap <down>  <nop>
+map  <left>  <nop>
+imap <left>  <nop>
+map  <right> <nop>
+imap <right> <nop>
+
+" Persistent undo without the mess "
+set undodir=~/.vim/undodir
+set undofile
+
+" Disable sounds "
+set noerrorbells
+
+" Presentation mappings "
+noremap <left> :silent bp<cr>:redraw!<cr>
+noremap <up> :silent bp<cr>:redraw!<cr>
+noremap <right> :silent bn<cr>:redraw!<cr>
+noremap <down> :silent bn<cr>:redraw!<cr>
+
+" Colors "
+colorscheme blue
+hi Ignore ctermfg=bg
+hi Title ctermfg=magenta
+hi EndOfBuffer ctermfg=bg

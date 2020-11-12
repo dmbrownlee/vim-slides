@@ -1,0 +1,19 @@
+#!/bin/bash
+# Install syntax color highlighting file if not already installed
+if [ ! -f "$HOME/.vim/syntax/slide.vim" ]; then
+  mkdir -p $HOME/.vim/syntax
+  cp .slide.vim $HOME/.vim/syntax/slide.vim
+fi
+
+mkdir -p .slides
+
+if [ $# -ne 1 ]; then
+  echo "USAGE: $0 <presentation file>"
+  exit 1
+fi
+
+if [ -f "slidedecks/$1" ]; then
+  split -p '^#' "slidedecks/$1" .slides/$1.
+  vim -u .vim-preso.rc .slides/$1.*
+  rm .slides/$1.*
+fi
