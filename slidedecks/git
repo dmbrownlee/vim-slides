@@ -1,22 +1,23 @@
+
+
+
+
+
+
+
+
+
+
+                         ► Intro to git and GitHub
+
+                             ► D. M. Brownlee
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-
-
-
-
-
-                         ♆ Intro to git and GitHub
-
-                             ♆ D. M. Brownlee
-# vim: filetype=slide
-
-
-
-
-  ♆ Software Configuration Managment (SCM)
+  ► Software Configuration Managment (SCM)
 
       In software engineering, software configuration management
       (SCM or S/W CM) is the task of tracking and controlling changes
@@ -27,11 +28,12 @@
 
                                                              - Wikipedia
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ example without VCS: workflow
+  ► example without VCS: workflow
 
       • setup is just creating a directory for your project and backups
 
@@ -46,11 +48,12 @@
         $ tar zcpvC ~ \
         > -f ~/backups/project1-$(date '+%Y%m%d-%H%M').tgz ./project1
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ example without VCS: problems (not all of them)
+  ► example without VCS: problems (not all of them)
 
       • inefficient storage
 
@@ -64,11 +67,12 @@
 
       • no collaboration
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ VCS definitions
+  ► VCS definitions
 
       • software configuration
 
@@ -82,6 +86,7 @@
 
         a class of systems responsible for managing changes to computer programs, documents, large web sites, or other collections of information
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
              |  |
              |  *  8: merge new API into main line
@@ -104,11 +109,12 @@
                 |
                 *  1: initial commit
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ local repo: components
+  ► local repo: components
 
       • workspace
 
@@ -122,11 +128,12 @@
 
         the storage space for your prior commits
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ local repo: initial setup
+  ► local repo: initial setup
 
       • change a directory into a local repository
 
@@ -138,11 +145,12 @@
         $ git config --global user.name "Your name here"
         $ git config --global user.email ghusername@users.noreply.github.com
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ local repo: workflow
+  ► local repo: workflow
 
       • Check the current status of the files in the repo
 
@@ -155,11 +163,12 @@
         $ git log --oneline --decorate --graph
         $ git log --oneline --stat
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ local repo: workflow (continued)
+  ► local repo: workflow (continued)
 
       • Add a file and view its untracked status
         $ vim myfile.txt
@@ -175,11 +184,12 @@
         $ git commit -m "Initial commit of myfile.txt"
         $ git status
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ local repo: workflow (continued)
+  ► local repo: workflow (continued)
 
       • Edit the same file and view its modified status
         $ vim myfile.txt
@@ -195,11 +205,12 @@
         $ git commit -m "Fixed foo which was causing problems with bar"
         $ git status
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ local repo: problems
+  ► local repo: problems
 
      • work is not safe from deletion or disk failure
 
@@ -207,21 +218,23 @@
 
      • removing your workspace also removed the repo
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ remote repo: components
+  ► remote repo: components
 
       • remote
 
         $ git remote -v
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ remote repo: initial setup
+  ► remote repo: initial setup
 
       • setup repo on local disk
 
@@ -235,11 +248,12 @@
         $ git config --global user.name "Your Display Name"
         $ git config --global user.email githubname@users.noreply.github.com
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ remote repo: workflow
+  ► remote repo: workflow
 
       • get current and start a new branch for your work
 
@@ -252,11 +266,12 @@
         $ git add .
         $ git commit -m "Why you made this change."
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ remote repo: workflow (continued)
+  ► remote repo: workflow (continued)
 
       • make sure you're still current and merge your changes
 
@@ -267,19 +282,21 @@
         $ git push
         $ git branch -d issue1234
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ multiple remote repos: components
+  ► multiple remote repos: components
 
       • forks of other remote repositories
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ multiple remote repos: initial setup
+  ► multiple remote repos: initial setup
 
       • fork an existing repository on GitHub
         $ # fork an existing repository on GitHub using web UI
@@ -291,14 +308,16 @@
 
       • use the GitHub UI to send a pull request to the origninal owner
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
 
-  ♆ multiple remote repos: problems
+  ► multiple remote repos: problems
 
       • still need to coordinate who is acting as authoritative repository
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
@@ -309,8 +328,9 @@
 
 
 
-                               ♆ Questions?
+                               ► Questions?
 # vim: filetype=slide
+#------------------------------------------------------------------------------
 
 
 
@@ -321,7 +341,7 @@
 
 
 
-                               ♆ Thank you!
+                               ► Thank you!
 
 
 
@@ -333,3 +353,4 @@
 
 
                                                                            :qa
+# vim: filetype=slide

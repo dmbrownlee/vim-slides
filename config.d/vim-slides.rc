@@ -4,8 +4,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-set modeline
 set nocompatible
+set modeline
+set modelines=10
 set mouse=a
 
 " UI tweaks "
@@ -51,6 +52,13 @@ noremap <down> :silent bn<cr>:redraw!<cr>
 
 " Colors "
 colorscheme blue
+hi Normal ctermfg=white ctermbg=darkblue
 hi Ignore ctermfg=bg
-hi Title ctermfg=magenta
+hi Ignore ctermfg=darkblue ctermbg=darkblue
+hi Title ctermfg=magenta ctermbg=darkblue
 hi EndOfBuffer ctermfg=bg
+
+" Hide cursor "
+execute "autocmd BufLeave * set t_ve=" . &t_ve
+execute "autocmd VimLeave * set t_ve=" . &t_ve
+execute "autocmd BufEnter * set t_ve="
