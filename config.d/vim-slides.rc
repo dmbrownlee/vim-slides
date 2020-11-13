@@ -52,10 +52,12 @@ noremap <down> :silent bn<cr>:redraw!<cr>
 
 " Colors "
 colorscheme blue
-hi Normal ctermfg=white ctermbg=darkblue
+hi Normal ctermfg=grey ctermbg=darkblue
 hi Ignore ctermfg=bg
-hi Ignore ctermfg=darkblue ctermbg=darkblue
-hi Title ctermfg=magenta ctermbg=darkblue
+"hi Ignore ctermfg=darkblue ctermbg=darkblue"
+hi Title ctermfg=green ctermbg=darkblue
+hi Keyword ctermfg=cyan ctermbg=darkblue
+hi Comment ctermfg=darkgrey ctermbg=darkblue
 hi EndOfBuffer ctermfg=bg
 
 " Hide cursor "
