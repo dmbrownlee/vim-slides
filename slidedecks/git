@@ -11,7 +11,7 @@
                          ► Intro to git and GitHub
 
                              ► D. M. Brownlee
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -27,7 +27,7 @@
       can determine what was changed and who changed it.
 
                                                              - Wikipedia
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -47,7 +47,7 @@
 
         $ tar zcpvC ~ \
         > -f ~/backups/project1-$(date '+%Y%m%d-%H%M').tgz ./project1
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -66,7 +66,7 @@
         ... work multiple issues
 
       • no collaboration
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -87,7 +87,7 @@
         a class of systems responsible for managing changes to computer
         programs, documents, large web sites, or other collections of
         information
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
              |  |
@@ -110,7 +110,7 @@
                 *  2: unit tests commited
                 |
                 *  1: initial commit
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -129,7 +129,7 @@
       • repository
 
         the storage space for your prior commits
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -146,7 +146,7 @@
         $ git config -l --global
         $ git config --global user.name "Your name here"
         $ git config --global user.email ghusername@users.noreply.github.com
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -164,7 +164,7 @@
         $ git log --oneline --since "$(date -v-7d)"
         $ git log --oneline --decorate --graph
         $ git log --oneline --stat
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -185,7 +185,7 @@
 
         $ git commit -m "Initial commit of myfile.txt"
         $ git status
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -206,7 +206,7 @@
         $ git add myfile.txt
         $ git commit -m "Fixed foo which was causing problems with bar"
         $ git status
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -219,7 +219,7 @@
        $ ls -a
 
      • removing your workspace also removed the repo
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -230,7 +230,7 @@
       • remote
 
         $ git remote -v
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -249,7 +249,7 @@
         $ git clone https://github.com/githubname/project3.git
         $ git config --global user.name "Your Display Name"
         $ git config --global user.email githubname@users.noreply.github.com
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -267,7 +267,7 @@
         $ vim ...
         $ git add .
         $ git commit -m "Why you made this change."
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -283,7 +283,7 @@
         $ # resolve conflicts, git add, git commit if needed
         $ git push
         $ git branch -d issue1234
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -292,7 +292,7 @@
   ► multiple remote repos: components
 
       • forks of other remote repositories
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -309,7 +309,7 @@
       • work with your fork as if you had created it yourself
 
       • use the GitHub UI to send a pull request to the origninal owner
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -318,7 +318,7 @@
   ► multiple remote repos: problems
 
       • still need to coordinate who is acting as authoritative repository
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -331,7 +331,7 @@
 
 
                                ► Questions?
-# vim: filetype=slide
+# vim: filetype=vim-slides
 #------------------------------------------------------------------------------
 
 
@@ -355,4 +355,4 @@
 
 
                                                                            :qa
-# vim: filetype=slide
+# vim: filetype=vim-slides
