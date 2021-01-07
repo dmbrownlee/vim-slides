@@ -1,0 +1,88 @@
+
+
+
+
+
+
+
+
+
+
+                         ► Using Vim's online help
+
+                             ► D. M. Brownlee
+# vim: filetype=slide
+#-
+  ► Is this for you?
+    • You're relatively new to Vim
+    • You have completed "vimtutor"
+# vim: filetype=slide
+#  These are some speaker notes
+#-
+  ► Windows, Buffers and Help
+    • Here is what Vim's online help says:
+
+      Summary:
+        A buffer is the in-memory text of a file.
+        A window is a viewport on a buffer.
+        A tab page is a collection of windows.
+
+    • You can have multiple windows open within Vim in a single terminal
+    • Vim's online help is just a readonly file in its own Windows
+# vim: filetype=slide
+#-
+  ► Opening Vim Windows
+    • Use ":new" to create a split with an empty buffer (do that now)
+    • Use "ctrl-w, ctrl-w" to move between this window and the other
+    • With the cursor in the other window, close it with ":q!"
+    • "ctrl-w, n" does the same thing as ":new" if you prefer
+    • Use ":split filename" to open (or create) "filename" in a new window
+# vim: filetype=slide
+#-
+  ► Veritcal splits work too
+      • Use ":vsplit"
+
+    - Navigating between windows
+    - Starting help
+    - Navigating with tags in help
+    - Starting the quickref
+# vim: filetype=slide
+#-
+
+
+
+
+
+
+
+
+
+
+                               ► Questions?
+# vim: filetype=slide
+#-
+
+
+
+
+
+
+
+
+
+
+                               ► Thank you!
+
+
+
+
+
+
+
+
+
+
+                                                                           :qa
+# vim: filetype=slide
+#   ►  u25ba
+#   •  u2022
